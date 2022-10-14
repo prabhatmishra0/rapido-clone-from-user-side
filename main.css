@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&family=Poppins&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+  position: absolute;
+  /* padding: 20px 40px 20px 40px; */
+  /* z-index: 1; */
+}
+
+.main_child {
+  width: 99%;
+  height: 90vh;
+  /* border: 1px solid black; */
+  position: relative;
+  top: 11px;
+  left: 11px;
+  z-index: 5;
+  display: grid;
+  grid-template-rows: 35% 65%;
+  grid-gap: 55px;
+}
+
+.form {
+  /* border: 1px solid black; */
+  width: 30%;
+}
+
+.form_child {
+  /* border: 1px solid black; */
+  background-color: #fff;
+  width: 400px;
+  height: 170px;
+  border-radius: 4px;
+  padding: 1%;
+  -webkit-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.52);
+  box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.52);
+}
+
+/* .form_child div {
+  width: 100%;
+  margin: 3.5%;
+} */
+
+.ff {
+  color: #ff5722;
+}
+
+.fs {
+  font-size: 24px;
+}
+
+.fw {
+  width: 19px;
+}
+
+.form_child div {
+  margin-top: 9px;
+}
+
+.form_child div div label {
+  margin-left: 26px;
+  font-size: 12px;
+  color: #c0c0c0;
+}
+
+.form_child div div input {
+    width: 80%;
+  padding: 5px;
+  border: 0px;
+  outline: none;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #1f1c1c;
+}
+
+/* .form_child div button {
+  background-color: #689df6;
+  color: #fff;
+  font-size: 14px;
+  width: 90px;
+  height: 30px;
+  border-radius: 3px;
+  border: 0px;
+  margin-top: 2px;
+} */
+
+.left{
+  width: 80%;
+  float: left;
+  /* border: 2px solid blue; */
+  padding: 10px;  
+}
+
+.right_button{
+  width: 15%;
+  height: 100%;
+  /* border: 1px solid black; */
+  float: right;
+}
+
+.right_button img{
+  margin-top: 90%;
+  margin-left: 8px;
+}
+
+.show-response {
+  width: 100%;
+  padding: 6% 0% 0% 6%;
+}
+
+.response_child {
+  width: 60%;
+  /* border: 1px solid black; */
+  float: right;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-gap: 20px;
+}
+
+.price_card{
+  padding: 20px;
+  background: #FFFFFF;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.heading{
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.show_price{
+  margin-top: 10px;
+  width: 100%;
+  height: 24px;
+  /* border: 1px solid black; */
+  /* padding-left: 20px;
+  padding-right: 20px; */
+}
+
+.total{
+  float: left;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.total_right{
+  float: right;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.viewmore{
+  color: #2a77f8;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.price_card button{
+  width: 100%;
+  height: 28px;
+  background-color: #2a77f8;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  border: 0px;
+  border-radius: 4px;
+  margin-top: 24px;
+}
+
+
+
+/* we start working with animation ✋✋✋✋✋✋✋✋*/
+
+
+/* @keyframes animatename{
+  0%{
+    transform: translateY(3px);
+  }
+  100%{
+    transform: translateY(-3px);
+  }
+}
+.my-div{
+  animation: animatename 1s linear infinite;
+  /* animation shorthand */
+  /* animation: animation-name animation-duration animation-direction animation-iteration-count */
+
+
