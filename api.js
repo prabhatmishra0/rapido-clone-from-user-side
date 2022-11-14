@@ -78,12 +78,14 @@ function initGoogle() {
     //     console.log(a);
     //     console.log(b);
 
-    // }
+    // }    
 
 
 
     document.getElementById('set').onclick = function() {
         calcRoute();
+
+    
     }
 
 
@@ -111,8 +113,26 @@ function initGoogle() {
                 // get distance and time
                 const output = document.querySelector('#output');
                 // output.innerHTML = "<div class='alert-info'> From : " + document.getElementById("origin").value + " .<br /> to : " + document.getElementById("destination").value + ".<br/> Driving Distance :" + result.routes[0].legs[0].distance.text + ". <br/> Duration : " + result.routes[0].legs[0].duration.text + ". </div>";
+                // console.log(result);
 
-                console.log(result);
+                // hear we replace mi to number 
+                // and this number in string format so i change it in int data type
+                let distance = result.routes[0].legs[0].distance.text;
+                let newdistance = distance.replace(" mi",'')
+                let intdistance = parseInt(newdistance);
+                console.log(intdistance);
+
+                // after we calculate the fair and show it
+                var fair = {
+                    bike: 9,
+                    mini: 16,
+                    sedan: 24
+                }
+
+                document.getElementById("bike").innerHTML = fair.bike * intdistance;
+                document.getElementById("Mini").innerHTML = fair.mini * intdistance;
+                document.getElementById("sedan").innerHTML = fair.sedan * intdistance;
+
                 
                 // display route
                 directionsDisplay.setDirections(result);

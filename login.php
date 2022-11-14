@@ -16,29 +16,26 @@
 </head>
 
 <body>
+
     <section class="container forms">
         <div class="form login">
             <div class="form-content">
                 <header>Login</header>
-                <form id="form" action="#" method="post">
-                    <div class=" field input-field">
-                        <input type="Number" id="num" placeholder=" Phone" class="input">
+                <form action="#" id="form">
+                    <div class="field input-field">
+                        <input type="number" placeholder="Number" id="num" class="input">
                     </div>
-
-                    <div class="field input-field hide">
-                        <input type="password" placeholder="Password" class="password">
-                        <i class='bx bx-hide eye-icon'></i>
-                    </div>
-
 
                     <div class="field button-field">
-                        <!-- <button type="submit">Get OTP</button> -->
+                        <!-- <button>Login</button> -->
                         <input type="submit" value="Get Otp">
 
                     </div>
                 </form>
 
-
+                <div class="form-link">
+                    <span>Don't have an account? <a href="signupform.php" class="link signup-link">Signup</a></span>
+                </div>
             </div>
 
             <div class="line"></div>
@@ -59,67 +56,65 @@
 
         </div>
 
-        <div class="show_message">
-            <p id="show"></p>
-        </div>
+    </section>
 
-        <script src="include/function.js"></script>
+    <script src="include/function.js"></script>
 
-        <script>
-        function show_data(type) {
-            document.getElementById('show').innerHTML = type;
-            document.getElementsByClassName('show_message')[0].style.display = "block";
-            setTimeout(() => {
-                document.getElementsByClassName('show_message')[0].style.display = "none";
-            }, "2000");
-        }
+    <script>
+    function show_data(type) {
+        document.getElementById('show').innerHTML = type;
+        document.getElementsByClassName('show_message')[0].style.display = "block";
+        setTimeout(() => {
+            document.getElementsByClassName('show_message')[0].style.display = "none";
+        }, "2000");
+    }
 
 
 
-        var a = document.getElementById('form');
+    var a = document.getElementById('form');
 
-        a.addEventListener('submit', function(e) {
+    a.addEventListener('submit', function(e) {
 
-            // auto submission of form
-            e.preventDefault();
+        // auto submission of form
+        e.preventDefault();
 
-            var b = document.getElementById('num').value;
+        var b = document.getElementById('num').value;
 
-            if (validate_num(b)) {
+        if (validate_num(b)) {
 
-                var FormData = {
-                    'num': b
-                }
-
-                jsondata = JSON.stringify(FormData);
-
-                // fetch post request
-
-                fetch('http://localhost/root/college_project/insert.php', {
-                        method: 'POST',
-                        body: jsondata,
-                        headers: {
-                            'Content-type': 'application/json',
-                        }
-                    })
-                    .then((response) => response.json())
-                    // .then((data) => {
-                    //     console.log(data);
-                    // })
-                    .then((data) => {
-                        console.log(data);
-
-                        if (data.code == 4002) {
-                            window.location.href = "verify_otp.php";
-                        }
-
-                    });
-
-            } else {
-                show_data("Enter valid number");
+            var FormData = {
+                'num': b
             }
-        });
-        </script>
+
+            jsondata = JSON.stringify(FormData);
+
+            // fetch post request
+
+            fetch('http://localhost/root/college_project/insert.php', {
+                    method: 'POST',
+                    body: jsondata,
+                    headers: {
+                        'Content-type': 'application/json',
+                    }
+                })
+                .then((response) => response.json())
+                // .then((data) => {
+                //     console.log(data);
+                // })
+                .then((data) => {
+                    console.log(data);
+
+                    if (data.code == 4002) {
+                        window.location.href = "verify_otp.php";
+                    }
+
+                });
+
+        } else {
+            show_data("Enter valid number");
+        }
+    });
+    </script>
 
 </body>
 

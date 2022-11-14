@@ -4,92 +4,135 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-
     <!-- add here ✋✋✋✋✋✋ -->
 
     <div class="main" id="map"></div>
 
     <div class="main_child">
-        <div class="form">
-            <div class="form_child">
-              <div class="left">
-                <div>
-                  <label for="Pickup">Pickup</label><br>
-                  <span><i class="fa fa-dot-circle-o fs ff"></i></span>
-                  <input type="text" id="origin" placeholder="Origin" />
-                </div>
-
-                <div>
-                  <label for="Drop">Drop</label><br>
-                  <span><i class="fa fa-map-marker fs fw" aria-hidden="true"></i></span>
-                  <input type="text" id="destination" placeholder="Destination" />
-                </div>
-              </div>
-
-              <div class="right_button">
-                <!-- <button id="set">Get Fare</button> -->
-                <img id="set" src="images/get.png" alt="" srcset="">
-              </div>  
+      <div class="form">
+        <div class="form_child">
+          <div class="left">
+            <div>
+              <label for="Pickup">Pickup</label><br />
+              <span><i class="fa fa-dot-circle-o fs ff"></i></span>
+              <input type="text" id="origin" placeholder="Origin" />
             </div>
-        </div>
 
-        <!-- price show div -->
-        <div class="show-response">
-          <div class="response_child">
-            <div class="price_card">
-              <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_5hztxbn1.json"  background="transparent"  speed="0.75"  style="width: 100%; height: 150px;"  autoplay></lottie-player>
-              <h3 class="heading">Bike</h3>
-              <div class="show_price">
-                <p class="total">Total fare</p>
-                <p class="total_right"> &#8377; 58</p>
-              </div>
-              <p class="viewmore">View more</p>
-              <button>Book</button>
-            </div>
-            <div class="price_card">
-              <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_znsmxbjo.json"  background="transparent"  speed="0.75"  style="width: 100%; height: 150px;" loop autoplay></lottie-player>
-              <h3 class="heading">Bike</h3>
-              <div class="show_price">
-                <p class="total">Total fare</p>
-                <p class="total_right"> &#8377; 58</p>
-              </div>
-              <p class="viewmore">View more</p>
-              <button>Book</button>
-            </div>
-            <div class="price_card">
-              <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_8NYY2Y.json"  background="transparent"  speed="0.75"  style="width: 100%; height: 150px;" loop autoplay></lottie-player>
-              <h3 class="heading">Bike</h3>
-              <div class="show_price">
-                <p class="total">Total fare</p>
-                <p class="total_right"> &#8377; 58</p>
-              </div>
-              <p class="viewmore">View more</p>
-              <button>Book</button>
+            <div>
+              <label for="Drop">Drop</label><br />
+              <span
+                ><i class="fa fa-map-marker fs fw" aria-hidden="true"></i
+              ></span>
+              <input type="text" id="destination" placeholder="Destination" />
             </div>
           </div>
+
+          <div class="right_button">
+            <!-- <button id="set">Get Fare</button> -->
+            <img
+              id="set"
+              onclick="showfaircard()"
+              src="images/get.png"
+              alt=""
+              srcset=""
+            />
+          </div>
         </div>
+      </div>
+
+      <!-- price show div -->
+      <div class="show-response" id="sho">
+        <div class="response_child">
+          <div class="price_card">
+            <lottie-player
+              src="https://assets6.lottiefiles.com/packages/lf20_5hztxbn1.json"
+              background="transparent"
+              speed="0.75"
+              style="width: 100%; height: 120px"
+              autoplay
+            ></lottie-player>
+            <h3 class="heading">Bike</h3>
+            <div class="show_price">
+              <p class="total">Total fare</p>
+              <p class="total_right" id="bike">&#8377; 58</p>
+            </div>
+            <p class="viewmore">View more</p>
+            <button>Book</button>
+          </div>
+          <div class="price_card">
+            <lottie-player
+              src="https://assets7.lottiefiles.com/packages/lf20_znsmxbjo.json"
+              background="transparent"
+              speed="0.75"
+              style="width: 100%; height: 120px"
+              loop
+              autoplay
+            ></lottie-player>
+            <h3 class="heading">Mini</h3>
+            <div class="show_price">
+              <p class="total">Total fare</p>
+              <p class="total_right" id="Mini">&#8377; 58</p>
+            </div>
+            <p class="viewmore">View more</p>
+            <button>Book</button>
+          </div>
+          <div class="price_card">
+            <lottie-player
+              src="https://assets8.lottiefiles.com/packages/lf20_8NYY2Y.json"
+              background="transparent"
+              speed="0.75"
+              style="width: 100%; height: 120px"
+              loop
+              autoplay
+            ></lottie-player>
+            <h3 class="heading">Sedan</h3>
+            <div class="show_price">
+              <p class="total">Total fare</p>
+              <p class="total_right" id="sedan">&#8377; 58</p>
+            </div>
+            <p class="viewmore">View more</p>
+            <button>Book</button>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-
     <script
       async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3XTtotTzkOYCkSBefLOU2JQovtWMRFQ&libraries=places&callback=initGoogle"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3XTtotTzkOYCkSBefLOU2JQovtWMRes=places&callback=initGoogle"
     ></script>
-    <script src="api.js"></script> 
+    <script src="api.js"></script>
+    <script>
+      // function showfaircard() {
+      //   document.getElementById("sho").style.display = "block";
+      //   console.log(345);
+      // }
 
+      document.getElementById("set").addEventListener("click", function (e) {
+        document.getElementById("sho").style.display = "block";
+      });
+
+      // document.getElementById('set').onclick = function() {
+      //   document.getElementById("sho").style.display = "block";
+
+      // }
+    </script>
   </body>
 </html>
